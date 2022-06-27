@@ -1,0 +1,7 @@
+{
+  "name": "scanzy-barcodescanner-sdk-sample-cordova-ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
