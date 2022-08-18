@@ -1,0 +1,73 @@
+# scanzy-barcodescanner-sample-ionic-cordova
+ionic cordova sample to use cordova-plugin-scanzy-barcodescanner
+
+## Plugins
+
+The following plugins are included:
+
+- [cordova-plugin-scanzy-barcodescanner](https://github.com/ScanzyLLC/cordova-plugin-scanzy-barcodescanner)
+To learn how to install cordova-plugin-scanzy-barcodescanner and use the scan feature, check the above link.
+
+## Development Setup 💻
+
+### Prerequisites
+
+- Install [Node.js](https://nodejs.org) which includes [Node Package Manager](https://www.npmjs.com/get-npm), version 14 or higher
+- Android development: Install [Android Studio](https://developer.android.com/studio)
+- iOS development: Install [XCode](https://apps.apple.com/de/app/xcode/id497799835?mt=12)
+- This project uses [Ionic](https://ionicframework.com/) as app development platform and the [Ionic CLI](https://ionicframework.com/docs/cli).
+
+### Getting Started
+
+Clone this repository:
+
+```
+git clone https://github.com/ScanzyLLC/scanzy-barcodescanner-sample-ionic-cordova.git
+```
+
+Change to the root directory of the project:
+
+```
+cd scanzy-barcodescanner-sample-ionic-cordova
+```
+
+Install all dependencies:
+
+```
+npm i
+```
+
+Add native platforms to the project:
+
+```
+ionic cordova platform add ios
+ionic cordova platform add android
+```
+
+Automatically create icon and splash screen resources
+```
+ionic cordova resources ios
+ionic cordova resources android
+```
+
+Build the web assets:
+
+```
+ionic cordova build ios
+ionic cordova build android
+```
+
+Copies assets to Cordova platforms, preparing them for native builds:
+
+```
+ionic cordova prepare ios
+ionic cordova prepare android
+
+```
+
+Launch the native app:
+
+```
+ionic cordova run ios
+ionic cordova run android
+```

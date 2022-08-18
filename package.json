@@ -1,5 +1,5 @@
 {
-  "name": "scanzy-barcodescanner-sdk-sample-cordova-ionic",
+  "name": "scanzy-barcodescanner-sample-ionic-cordova",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -21,6 +21,8 @@
     "@angular/router": "^14.0.0",
     "@ionic/angular": "^6.1.9",
     "@ionic/cordova-builders": "^6.1.0",
+    "@ionic/storage-angular": "^3.0.6",
+    "cordova-plugin-scanzy-barcodescanner": "file:../plugins/cordova-plugin-scanzy-barcodescanner",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="scanzy">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">
+      Settings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngIf="settings" class="ion-padding-bottom">
+    <ion-list-header color="light"><ion-label>Common Settings</ion-label></ion-list-header>
+    <ion-item>
+      <ion-label>Beep Enabled</ion-label>
+      <ion-toggle color="success"[(ngModel)]="settings.enableBeep" (ionChange)="updateSettings()"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Vibration Enabled</ion-label>
+      <ion-toggle color="success" [(ngModel)]="settings.enableVibrate" (ionChange)="updateSettings()"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Auto Zoom</ion-label>
+      <ion-toggle  color="success" [(ngModel)]="settings.enableAutoZoom" (ionChange)="updateSettings()"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Restirct Scanning Area</ion-label>
+      <ion-toggle color="success" [(ngModel)]="settings.enableScanRectOnly" (ionChange)="updateSettings()"></ion-toggle>
+    </ion-item>
+    
+    <ion-list-header color="light"><ion-label>Barcode Symbols</ion-label></ion-list-header>
+    <ion-list-header lines="inset"> 
+      <ion-icon name="barcode-outline" size="large"></ion-icon> 
+      <ion-label class="ion-padding-start">1D</ion-label>
+      <span style="padding-right:28px">
+        <ion-checkbox color="success" indeterminate="true" [(ngModel)]="check1DAll" (ionChange)="changeAllBarcodes($event, '1D');updateSettings()"></ion-checkbox>
+      </span>
+    </ion-list-header>
+    <ion-item *ngFor="let entry of settings.barcode['1D']">
+      <ion-label>{{entry.type}}</ion-label>
+      <ion-checkbox color="success" class="custom-checkbox" [(ngModel)]="entry.value" (click)="checkBarcode()"><ion-icon name="checkmark"></ion-icon></ion-checkbox>
+      <ion-icon *ngIf="entry.value" name="checkmark" color="success" class="ion-padding-end"></ion-icon>
+    </ion-item>
+    <ion-list-header lines="inset">
+      <ion-icon name="qr-code-outline" size="large"></ion-icon>
+      <ion-label class="ion-padding-start">2D</ion-label>
+      <span style="padding-right:28px">
+        <ion-checkbox color="success" indeterminate="true" [(ngModel)]="check2DAll" (ionChange)="changeAllBarcodes($event, '2D');updateSettings()"></ion-checkbox>
+      </span>
+    </ion-list-header>
+    <ion-item *ngFor="let entry of settings.barcode['2D']">
+      <ion-label>{{entry.type}}</ion-label>
+      <ion-checkbox color="success" class="custom-checkbox" [(ngModel)]="entry.value" (click)="checkBarcode()"></ion-checkbox>
+      <ion-icon *ngIf="entry.value" name="checkmark" color="success" class="ion-padding-end"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

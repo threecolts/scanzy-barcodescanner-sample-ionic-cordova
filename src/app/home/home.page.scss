@@ -1,27 +1,31 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
+ion-list-header {
   font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+  text-transform: uppercase;
+  color: #92949c;
 }
-
-#container a {
-  text-decoration: none;
+ion-list {
+  padding: 0;
+}
+ion-label {
+  p {
+      white-space: initial;
+  }
+}
+.about-container {
+  a {
+      color: inherit;
+      text-decoration: inherit;
+  }
+  padding: 0 !important;
+}
+.toolbar-container {
+  padding: 0 !important;
+}
+.version-container {
+  font-size: .8rem;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
 }
