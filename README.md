@@ -5,8 +5,8 @@ ionic cordova sample to use cordova-plugin-scanzy-barcodescanner
 
 The following plugins are included:
 
-- [cordova-plugin-scanzy-barcodescanner](https://github.com/ScanzyLLC/cordova-plugin-scanzy-barcodescanner)
-To learn how to install cordova-plugin-scanzy-barcodescanner and use the scan feature, check the above link.
+- [cordova-plugin-scanzy-barcodescanner](https://www.npmjs.com/package/cordova-plugin-scanzy-barcodescanner)
+To learn how to install cordova-plugin-scanzy-barcodescanner and use the scan feature, check our [official documentation](https://developer.scanzy.com)
 
 ## Development Setup 💻
 
