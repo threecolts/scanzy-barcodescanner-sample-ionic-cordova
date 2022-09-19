@@ -35,11 +35,11 @@ export class SettingsService {
             value = <ISettings>({
               enableBeep: true,
               enableVibrate: true,
-              enableScanRectOnly: false,
+              enableScanRectOnly: true,
               enableAutoZoom: false,
               barcode: {
-                '1D': [{type: ScanzyBarcodeFormat.Code128, value: false},{type: ScanzyBarcodeFormat.Code39, value: false}, {type: ScanzyBarcodeFormat.Code93, value: false}, {type: ScanzyBarcodeFormat.CodaBar, value: false}, {type: ScanzyBarcodeFormat.EAN13, value: true}, {type: ScanzyBarcodeFormat.EAN8, value: true},{type: ScanzyBarcodeFormat.ITF, value: false},{type: ScanzyBarcodeFormat.UPCA, value: true},{type: ScanzyBarcodeFormat.UPCE, value: true}],
-                '2D': [{type: ScanzyBarcodeFormat.QRCode, value: true},{type: ScanzyBarcodeFormat.DataMatrix, value: false},{type: ScanzyBarcodeFormat.PDF417, value: false},{type: ScanzyBarcodeFormat.Aztec, value: false}, {type: ScanzyBarcodeFormat.MaxiCode, value: false}]
+                '1D': [{type: ScanzyBarcodeFormat.Code128, value: true},{type: ScanzyBarcodeFormat.Code39, value: true}, {type: ScanzyBarcodeFormat.Code93, value: true}, {type: ScanzyBarcodeFormat.CodaBar, value: true}, {type: ScanzyBarcodeFormat.EAN13, value: true}, {type: ScanzyBarcodeFormat.EAN8, value: true},{type: ScanzyBarcodeFormat.ITF, value: true},{type: ScanzyBarcodeFormat.UPCA, value: true},{type: ScanzyBarcodeFormat.UPCE, value: true}],
+                '2D': [{type: ScanzyBarcodeFormat.QRCode, value: true},{type: ScanzyBarcodeFormat.DataMatrix, value: true},{type: ScanzyBarcodeFormat.PDF417, value: true},{type: ScanzyBarcodeFormat.Aztec, value: true}, {type: ScanzyBarcodeFormat.MaxiCode, value: true}]
               }
             })
             this.storage.set('SCANZY_SETTINGS', value)

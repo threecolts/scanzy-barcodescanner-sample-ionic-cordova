@@ -19,28 +19,14 @@ export class HomePage {
 
   scan(type) {
     try {
-        if(type=='1D') {
-          let settings = new ScanzyBarcodeOptions(
-            this.settings.enableBeep, 
-            this.settings.enableVibrate, 
-            this.settings.enableAutoZoom, 
-            this.settings.enableScanRectOnly, 
-            this.settings.barcode['1D'].filter(item=>{return item.value}).map(item=>{return item.type})
-          )
-          console.log(settings);
-          ScanzyBarcodeScanner.scan(this.scanSuccess.bind(this), this.scanFailure.bind(this), settings)
-        }
-        else{
-          let settings = new ScanzyBarcodeOptions(
-            this.settings.enableBeep, 
-            this.settings.enableVibrate, 
-            this.settings.enableAutoZoom, 
-            this.settings.enableScanRectOnly, 
-            this.settings.barcode['2D'].filter(item=>{return item.value}).map(item=>{return item.type})
-          )
-          console.log(settings);
-          ScanzyBarcodeScanner.qrscan(this.scanSuccess.bind(this), this.scanFailure.bind(this), settings)
-        }
+      let settings = new ScanzyBarcodeOptions(
+        this.settings.enableBeep, 
+        this.settings.enableVibrate, 
+        this.settings.enableAutoZoom, 
+        this.settings.enableScanRectOnly, 
+        this.settings.barcode[type].filter(item=>{return item.value}).map(item=>{return item.type})
+      )
+      ScanzyBarcodeScanner.scan(this.scanSuccess.bind(this), this.scanFailure.bind(this), settings)
     } catch (e) {
       alert(e);
     }
