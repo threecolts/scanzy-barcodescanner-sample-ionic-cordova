@@ -35,7 +35,7 @@ export class SettingsService {
             value = <ISettings>({
               enableBeep: true,
               enableVibrate: true,
-              enableScanRectOnly: true,
+              enableScanRectOnly: false,
               enableAutoZoom: false,
               barcode: {
                 '1D': [{type: ScanzyBarcodeFormat.Code128, value: true},{type: ScanzyBarcodeFormat.Code39, value: true}, {type: ScanzyBarcodeFormat.Code93, value: true}, {type: ScanzyBarcodeFormat.CodaBar, value: true}, {type: ScanzyBarcodeFormat.EAN13, value: true}, {type: ScanzyBarcodeFormat.EAN8, value: true},{type: ScanzyBarcodeFormat.ITF, value: true},{type: ScanzyBarcodeFormat.UPCA, value: true},{type: ScanzyBarcodeFormat.UPCE, value: true}],
