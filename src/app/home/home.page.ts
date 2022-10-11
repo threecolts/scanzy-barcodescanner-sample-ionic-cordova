@@ -32,59 +32,59 @@ export class HomePage {
     }
   }
 
-  scanSuccess(code) {
-    console.log('scan result:', code)
-    if(code!='')
-      this.doResearch(code)
+  scanSuccess(result) {
+    console.log('scan result:', result.barcode, result.barcodeType)
+    if(result.barcode!='')
+      this.doResearch(result.barcode, result.barcodeType)
   }
 
-  async doResearch(code) {
+  async doResearch(barcode, barcodeType) {
       this.actionSheet = await this.actionSheetController.create({
-      header: code,
+      header: `${barcode} (${barcodeType})`,
       subHeader: 'Where would you like to do your research?',
       cssClass: 'my-custom-class',
       buttons: [{
         text: 'Amazon Listing',
         handler: () => {
-          window.open("http://www.amazon.com/gp/product/" + code, "_blank")
-          this.doResearch(code)
+          window.open("http://www.amazon.com/gp/product/" + barcode, "_blank")
+          this.doResearch(barcode, barcodeType)
         }
       }, {
         text: 'Amazon Prime',
         handler: () => {
-          window.open("http://www.amazon.com/gp/offer-listing/" + code +"/sr=/qid=/ref=olp_prime_all?ie=UTF8&colid=&coliid=&condition=all&me=&qid=&seller=&shipPromoFilter=1&sort=sip&sr=", "_blank")
-          this.doResearch(code)
+          window.open("http://www.amazon.com/gp/offer-listing/" + barcode +"/sr=/qid=/ref=olp_prime_all?ie=UTF8&colid=&coliid=&condition=all&me=&qid=&seller=&shipPromoFilter=1&sort=sip&sr=", "_blank")
+          this.doResearch(barcode, barcodeType)
         }
       }, {
         text: 'Keepa',
         handler: () => {
-          window.open(" https://keepa.com/#!product/1-" + code, "_blank");
-          this.doResearch(code)
+          window.open(" https://keepa.com/#!product/1-" + barcode, "_blank");
+          this.doResearch(barcode, barcodeType)
         }
       },{
         text: 'CamelCamelCamel',
         handler: () => {
-          window.open("http://camelcamelcamel.com/product/" + code, "_blank");
-          this.doResearch(code)
+          window.open("http://camelcamelcamel.com/product/" + barcode, "_blank");
+          this.doResearch(barcode, barcodeType)
         }
       }, {
         text: 'BookScouter',
         handler: () => {
-          window.open("https://bookscouter.com/sell/" + code, "_blank");
-          this.doResearch(code)
+          window.open("https://bookscouter.com/sell/" + barcode, "_blank");
+          this.doResearch(barcode, barcodeType)
         }
       },{
         text: 'Ebay',
         handler: () => {
-          window.open("http://www.ebay.com/sch/i.html?_trksid=p2050601.m570.l1313&_nkw=" + code + "&_sacat=0&_from=R40", "_blank");
-          this.doResearch(code)
+          window.open("http://www.ebay.com/sch/i.html?_trksid=p2050601.m570.l1313&_nkw=" + barcode + "&_sacat=0&_from=R40", "_blank");
+          this.doResearch(barcode, barcodeType)
         }
       },
       {
           text: 'Google',
           handler: () => {
-            window.open("https://www.google.com/search?q=" + code, "_blank");
-            this.doResearch(code)
+            window.open("https://www.google.com/search?q=" + barcode, "_blank");
+            this.doResearch(barcode, barcodeType)
           }
       },{
         text: 'Cancel',
