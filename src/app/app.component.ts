@@ -9,7 +9,7 @@ declare var ScanzyBarcodeScanner: any;
 export class AppComponent {
   constructor(private platform: Platform) {
     this.platform.ready().then(()=>{
-      ScanzyBarcodeScanner.setLicense("BdyCh9eyxw$9#k2qX79Z");
+      ScanzyBarcodeScanner.setLicense('BdyCh9eyxw$9#k2qX79Z');
     })
   }
 }

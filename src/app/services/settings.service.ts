@@ -16,13 +16,13 @@ export interface IBarcode {
 
 export interface IBarcodeType {
   type: string;
-  value: boolean
+  value: boolean;
 }
 @Injectable()
 export class SettingsService {
   public settings: ISettings = null;
-  constructor(private storage: Storage) { 
-    this.storage.create()
+  constructor(private storage: Storage) {
+    this.storage.create();
   }
 
   public getSettings() {
@@ -41,17 +41,17 @@ export class SettingsService {
                 '1D': [{type: ScanzyBarcodeFormat.Code128, value: true},{type: ScanzyBarcodeFormat.Code39, value: true}, {type: ScanzyBarcodeFormat.Code93, value: true}, {type: ScanzyBarcodeFormat.CodaBar, value: true}, {type: ScanzyBarcodeFormat.EAN13, value: true}, {type: ScanzyBarcodeFormat.EAN8, value: true},{type: ScanzyBarcodeFormat.ITF, value: true},{type: ScanzyBarcodeFormat.UPCA, value: true},{type: ScanzyBarcodeFormat.UPCE, value: true}],
                 '2D': [{type: ScanzyBarcodeFormat.QRCode, value: true},{type: ScanzyBarcodeFormat.DataMatrix, value: true},{type: ScanzyBarcodeFormat.PDF417, value: true},{type: ScanzyBarcodeFormat.Aztec, value: true}, {type: ScanzyBarcodeFormat.MaxiCode, value: true}]
               }
-            })
-            this.storage.set('SCANZY_SETTINGS', value)
+            });
+            this.storage.set('SCANZY_SETTINGS', value);
           }
           this.settings = value;
-          return resolve(this.settings)
-        })
+          return resolve(this.settings);
+        });
       }
-    })
+    });
   }
 
   public updateSettings(settings: ISettings) {
-    this.storage.set('SCANZY_SETTINGS', settings)
+    this.storage.set('SCANZY_SETTINGS', settings);
   }
 }
