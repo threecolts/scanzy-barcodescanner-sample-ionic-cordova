@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 declare var ScanzyBarcodeFormat: any;
 export interface ISettings {
+  enableVibration: boolean;
   enableBeep: boolean;
-  enableVibrate: boolean;
   enableAutoZoom: boolean;
-  enableScanRectOnly: boolean;
+  enableScanCropRectOnly: boolean;
   barcode: IBarcode;
 }
 
@@ -32,16 +32,16 @@ export class SettingsService {
       } else {
         this.storage.get('SCANZY_SETTINGS').then(value=>{
           if(value==null) {
-            value = <ISettings>({
+            value = ({
+              enableVibration: true,
               enableBeep: true,
-              enableVibrate: true,
-              enableScanRectOnly: false,
               enableAutoZoom: false,
+              enableScanCropRectOnly: false,
               barcode: {
                 '1D': [{type: ScanzyBarcodeFormat.Code128, value: true},{type: ScanzyBarcodeFormat.Code39, value: true}, {type: ScanzyBarcodeFormat.Code93, value: true}, {type: ScanzyBarcodeFormat.CodaBar, value: true}, {type: ScanzyBarcodeFormat.EAN13, value: true}, {type: ScanzyBarcodeFormat.EAN8, value: true},{type: ScanzyBarcodeFormat.ITF, value: true},{type: ScanzyBarcodeFormat.UPCA, value: true},{type: ScanzyBarcodeFormat.UPCE, value: true}],
                 '2D': [{type: ScanzyBarcodeFormat.QRCode, value: true},{type: ScanzyBarcodeFormat.DataMatrix, value: true},{type: ScanzyBarcodeFormat.PDF417, value: true},{type: ScanzyBarcodeFormat.Aztec, value: true}, {type: ScanzyBarcodeFormat.MaxiCode, value: true}]
               }
-            });
+            }) as ISettings;
             this.storage.set('SCANZY_SETTINGS', value);
           }
           this.settings = value;

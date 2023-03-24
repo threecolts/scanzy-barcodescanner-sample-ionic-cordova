@@ -13,12 +13,12 @@
   <ion-list *ngIf="settings" class="ion-padding-bottom">
     <ion-list-header color="light"><ion-label>Common Settings</ion-label></ion-list-header>
     <ion-item>
-      <ion-label>Beep Enabled</ion-label>
-      <ion-toggle color="success"[(ngModel)]="settings.enableBeep" (ionChange)="updateSettings()"></ion-toggle>
+      <ion-label>Vibration Enabled</ion-label>
+      <ion-toggle color="success" [(ngModel)]="settings.enableVibration" (ionChange)="updateSettings()"></ion-toggle>
     </ion-item>
     <ion-item>
-      <ion-label>Vibration Enabled</ion-label>
-      <ion-toggle color="success" [(ngModel)]="settings.enableVibrate" (ionChange)="updateSettings()"></ion-toggle>
+      <ion-label>Beep Enabled</ion-label>
+      <ion-toggle color="success"[(ngModel)]="settings.enableBeep" (ionChange)="updateSettings()"></ion-toggle>
     </ion-item>
     <ion-item>
       <ion-label>Auto Zoom</ion-label>
@@ -26,7 +26,7 @@
     </ion-item>
     <ion-item>
       <ion-label>Restirct Scanning Area</ion-label>
-      <ion-toggle color="success" [(ngModel)]="settings.enableScanRectOnly" (ionChange)="updateSettings()"></ion-toggle>
+      <ion-toggle color="success" [(ngModel)]="settings.enableScanCropRectOnly" (ionChange)="updateSettings()"></ion-toggle>
     </ion-item>
     
     <ion-list-header color="light"><ion-label>Barcode Symbols</ion-label></ion-list-header>

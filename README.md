@@ -65,14 +65,14 @@ ionic cordova prepare android
 
 ```
 
-Install the native-run utility for native package deployment:
-```
-npm install -g native-run
-```
+Run the app in Xcode:
+* Open the workspace file ScanzyBarcodeScannerSDKSampleReactNative.xcworkspace (not .xcodeproj) from the ios * directory in Xcode.
+* Adjust Provisioning and Signing settings.
+* Choose one simulator or local device to run the app.
 
-Launch the native app:
-
-```
-ionic cordova run ios
-ionic cordova run android
-```
+Run the app in Android Studio:
+* Open the project located in platforms/android using the Android Studio.
+* Select File --> Sync Project with Gradle Files
+* If you met with 'Unable to determine Android SDK directory' build error:
+  Create new File --> Project--> Platform --> android--> local.properties. 
+  Then add sdk.dir={YOUR_SDK_PATH} (example: sdk.dir=/Users/admin/Library/Android/sdk) to the file, and try to sync again.

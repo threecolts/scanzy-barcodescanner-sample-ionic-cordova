@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, Platform } from '@ionic/angular';
 import { ISettings, SettingsService } from '../services/settings.service';
-declare var ScanzyBarcodeScanner: any;
+declare var ScanzyBarcodeManager: any;
 declare var ScanzyBarcodeOptions: any;
 @Component({
   selector: 'app-home',
@@ -20,13 +20,13 @@ export class HomePage implements OnInit {
   scan(type) {
     try {
       const settings = new ScanzyBarcodeOptions(
+        this.settings.enableVibration,
         this.settings.enableBeep,
-        this.settings.enableVibrate,
         this.settings.enableAutoZoom,
-        this.settings.enableScanRectOnly,
+        this.settings.enableScanCropRectOnly,
         this.settings.barcode[type].filter(item => item.value).map(item => item.type)
       );
-      ScanzyBarcodeScanner.scan(this.scanSuccess.bind(this), this.scanFailure.bind(this), settings);
+      ScanzyBarcodeManager.scan(this.scanSuccess.bind(this), this.scanFailure.bind(this), settings);
     } catch (e) {
       alert(e);
     }
@@ -45,13 +45,13 @@ export class HomePage implements OnInit {
       buttons: [{
         text: 'Amazon Listing',
         handler: () => {
-          window.open('http://www.amazon.com/gp/product/' + barcode, '_blank')
+          window.open('http://www.amazon.com/gp/product/' + barcode, '_blank');
           this.doResearch(barcode, barcodeType);
         }
       }, {
         text: 'Amazon Prime',
         handler: () => {
-          window.open('http://www.amazon.com/gp/offer-listing/' + barcode + '/sr=/qid=/ref=olp_prime_all?ie=UTF8&colid=&coliid=&condition=all&me=&qid=&seller=&shipPromoFilter=1&sort=sip&sr=', '_blank')
+          window.open('http://www.amazon.com/gp/offer-listing/' + barcode + '/sr=/qid=/ref=olp_prime_all?ie=UTF8&colid=&coliid=&condition=all&me=&qid=&seller=&shipPromoFilter=1&sort=sip&sr=', '_blank');
           this.doResearch(barcode, barcodeType);
         }
       }, {
