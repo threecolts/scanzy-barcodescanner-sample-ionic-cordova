@@ -15,11 +15,11 @@ To learn how to install cordova-plugin-scanzy-barcodescanner and use the scan fe
 - Install [Node.js v14](https://nodejs.org) or higher, with [Node Package Manager](https://www.npmjs.com/get-npm) v7.24 or higher
 - Android development: Install [Android Studio](https://developer.android.com/studio)
 - iOS development: Install [XCode](https://apps.apple.com/de/app/xcode/id497799835?mt=12)
-- This project uses [Ionic](https://ionicframework.com/) as app development platform and the [Ionic CLI](https://ionicframework.com/docs/cli).
+- This project uses [Ionic](https://ionicframework.com/) as an app development platform and the [Ionic CLI](https://ionicframework.com/docs/cli).
 
 ### Getting Started
 
-With Node and NPM setup, let’s install the Ionic and Cordova CLI.
+With Node and NPM set up, let's install the Ionic and Cordova CLI.
 
 ```
 npm install -g ionic cordova
@@ -57,7 +57,7 @@ ionic cordova build ios
 ionic cordova build android
 ```
 
-Copies assets to Cordova platforms, preparing them for native builds:
+Copy assets to Cordova platforms, preparing them for native builds:
 
 ```
 ionic cordova prepare ios
@@ -65,14 +65,14 @@ ionic cordova prepare android
 
 ```
 
-#### For IOS project, run the app using the Xcode:
+#### For an IOS project, run the app using Xcode:
 * Open the workspace file ScanzyBarcodeScannerSDKSampleReactNative.xcworkspace (not .xcodeproj) from the ios * directory in Xcode.
 * Adjust Provisioning and Signing settings.
 * Choose one simulator or local device to run the app.
 
-#### For Android project, Run the app using the Android Studio:
-* Open the project located in platforms/android using the Android Studio.
+#### For an Android project, run the app using Android Studio:
+* Open the project located in platforms/android using Android Studio.
 * Select File --> Sync Project with Gradle Files
-* If you met with 'Unable to determine Android SDK directory' build error:
+* If you experience the 'Unable to determine Android SDK directory' build error:
   Create new File --> Project--> Platform --> android--> local.properties. 
   Then add sdk.dir={YOUR_SDK_PATH} (example: sdk.dir=/Users/admin/Library/Android/sdk) to the file, and try to sync again.
