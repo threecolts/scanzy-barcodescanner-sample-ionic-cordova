@@ -1,5 +1,5 @@
 # scanzy-barcodescanner-sample-ionic-cordova
-ionic cordova sample to use cordova-plugin-scanzy-barcodescanner
+Ionic cordova sample to use cordova-plugin-scanzy-barcodescanner
 
 ## Plugins
 
